@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de CEP por Endereço</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📍 Busca de CEP por Endereço</h1>
+        
+        <div class="search-box">
+            <h2>Digite o endereço:</h2>
+            
+            <div class="form-group">
+                <label for="uf">Estado (UF):</label>
+                <select id="uf" class="form-control">
+                    <option value="">Selecione o estado</option>
+                    <option value="AC">Acre (AC)</option>
+                    <option value="AL">Alagoas (AL)</option>
+                    <option value="AP">Amapá (AP)</option>
+                    <option value="AM">Amazonas (AM)</option>
+                    <option value="BA">Bahia (BA)</option>
+                    <option value="CE">Ceará (CE)</option>
+                    <option value="DF">Distrito Federal (DF)</option>
+                    <option value="ES">Espírito Santo (ES)</option>
+                    <option value="GO">Goiás (GO)</option>
+                    <option value="MA">Maranhão (MA)</option>
+                    <option value="MT">Mato Grosso (MT)</option>
+                    <option value="MS">Mato Grosso do Sul (MS)</option>
+                    <option value="MG">Minas Gerais (MG)</option>
+                    <option value="PA">Pará (PA)</option>
+                    <option value="PB">Paraíba (PB)</option>
+                    <option value="PR">Paraná (PR)</option>
+                    <option value="PE">Pernambuco (PE)</option>
+                    <option value="PI">Piauí (PI)</option>
+                    <option value="RJ">Rio de Janeiro (RJ)</option>
+                    <option value="RN">Rio Grande do Norte (RN)</option>
+                    <option value="RS">Rio Grande do Sul (RS)</option>
+                    <option value="RO">Rondônia (RO)</option>
+                    <option value="RR">Roraima (RR)</option>
+                    <option value="SC">Santa Catarina (SC)</option>
+                    <option value="SP">São Paulo (SP)</option>
+                    <option value="SE">Sergipe (SE)</option>
+                    <option value="TO">Tocantins (TO)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="cidade">Cidade:</label>
+                <select id="cidade" class="form-control" disabled>
+                    <option value="">Primeiro selecione o estado</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="logradouro">Logradouro (rua/avenida):</label>
+                <input type="text" 
+                       id="logradouro" 
+                       class="form-control" 
+                       placeholder="Digite o nome da rua ou avenida"
+                       disabled>
+            </div>
+
+            <button id="btnBuscar" class="btn-buscar" disabled>
+                Buscar CEP
+            </button>
+
+            <span class="error-message" id="erro"></span>
+        </div>
+
+        <div class="result-box" id="resultado">
+            <div class="loading" id="loading">Buscando CEPs...</div>
+            
+            <div id="resultadosLista" class="resultados-lista">
+                <!-- Resultados serão inseridos aqui -->
+            </div>
+        </div>
+
+        <div class="history-box" id="historico">
+            <h2>📋 Últimas buscas</h2>
+            <ul id="listaHistorico"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
